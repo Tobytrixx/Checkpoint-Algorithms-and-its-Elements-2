@@ -1,0 +1,38 @@
+ALGORITHM algorithm_name
+VAR
+//sentence is a variable called sentence//
+    sentence:STRING; 
+//declare variables for conters and increments//  
+    S_Length, N_Words, N_Vowels,i,j,k:INTEGER;
+
+BEGIN
+
+//step1:Read sentence as an array//
+  read (sentence)
+
+//step2:Calculate the length of the sentence, while the "." is not reached increment the length//
+WHILE (sentence[i] <> ".") DO
+   S_Length:=S_Length+1;
+   i=i+1;
+END_WHILE
+   
+//step3: Calculate the numbers of words by calculating the n of spaces//
+WHILE (j<S_Length) DO
+    IF (sentence[j]=" ") THEN
+    N_Words:=N_Words+1
+    j:=j+1;
+    END_IF
+END_WHILE
+
+//step4: Calculate the n of Vowels which are "a" "e" "u" "i" "o"//SWITH (vowels)//
+
+WHILE (k<S_Length)
+IF (sentence[k]="a" OR sentence[k]="e" OR sentence[k]="u" OR sentence[k]="i" OR sentence[k]="o") THEN
+    N_Vowels:=N_Vowels+1;
+    k:=k+1;
+END_IF
+END_WHILE
+
+   write(S_Length, N_Words, N_Vowels);
+
+END
